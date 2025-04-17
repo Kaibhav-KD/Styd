@@ -1,0 +1,309 @@
+/* Modern Color Scheme and Variables */
+:root {
+    --primary-color: #2563eb;
+    --secondary-color: #1e40af;
+    --background-color: #f0f2f5;
+    --text-color: #1e293b;
+    --accent-color: #3b82f6;
+    --white: #ffffff;
+    --gray-light: #f1f5f9;
+    --shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    --island-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+}
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+/* Dynamic Island Navigation */
+.main-nav {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 1.2rem 2rem;
+    margin: 0 auto 2rem;
+    max-width: 800px;
+    width: 90%;
+    box-shadow: var(--island-shadow);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.logo h1 {
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.main-nav ul {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.main-nav ul li a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.main-nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+.main-nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* Main Content Layout */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+}
+
+main section:first-child {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 2rem;
+    max-width: 400px;
+}
+
+/* Meeting Options Section */
+main section:last-child {
+    position: absolute;
+    left: calc(400px + 6rem);
+    top: 120px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* Welcome Message */
+.welcome-message {
+    text-align: left;
+    padding: 0 0 1.5rem 0;
+    max-width: 500px;
+    margin: 0;
+}
+
+.welcome-message h2 {
+    font-size: 4.5rem;
+    color: var(--text-color);
+    margin-bottom: 0.4rem;
+    font-weight: 800;
+    letter-spacing: -2px;
+    line-height: 1.1;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.welcome-message p {
+    font-size: 1.5rem;
+    color: var(--text-color);
+    opacity: 0.9;
+    font-weight: 600;
+    letter-spacing: -0.3px;
+}
+
+/* Profile Box Styles */
+.profile-box {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    padding: 1.5rem;
+    border-radius: 15px;
+    box-shadow: var(--island-shadow);
+    width: 100%;
+}
+
+.profile-box h2 {
+    color: var(--text-color);
+    margin-bottom: 1.2rem;
+    font-size: 1.2rem;
+}
+
+.profile-box form div {
+    margin-bottom: 1rem;
+}
+
+.profile-box label {
+    display: block;
+    margin-bottom: 0.3rem;
+    font-weight: 500;
+    color: var(--text-color);
+    font-size: 0.9rem;
+}
+
+.profile-box input {
+    width: 100%;
+    padding: 0.6rem 0.8rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    background: var(--white);
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.profile-box input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* Meeting Options */
+.meeting-options {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    gap: 1.5rem;
+    width: 700px;
+    padding: 2.5rem;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    box-shadow: var(--island-shadow);
+    min-height: 220px;
+}
+
+.meeting-options button {
+    background: var(--white);
+    border: none;
+    padding: 3rem 1.5rem;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100%;
+    white-space: nowrap;
+    line-height: 1.4;
+}
+
+.meeting-options button:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--island-shadow);
+    background: var(--primary-color);
+    color: var(--white);
+}
+
+.meeting-options button:last-child {
+    grid-column: auto;
+}
+
+/* Storage Info */
+.storage {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    padding: 6rem;
+    border-radius: 15px;
+    box-shadow: var(--island-shadow);
+    width: 700px;
+    height: 210px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+}
+
+.storage p {
+    font-weight: 600;
+    color: var(--text-color);
+    font-size: 1.2rem;
+}
+
+/* Hover Effects */
+.main-nav:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--island-shadow);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    main section:last-child {
+        position: static;
+        margin-top: 2rem;
+        width: 100%;
+        max-width: 700px;
+    }
+
+    .meeting-options {
+        width: 100%;
+        min-height: 200px;
+    }
+
+    .storage {
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .meeting-options {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, 1fr);
+        gap: 1rem;
+        padding: 1.5rem;
+        min-height: auto;
+    }
+
+    .meeting-options button {
+        padding: 1.5rem;
+        font-size: 1.1rem;
+    }
+
+    .storage {
+        width: 150px;
+        height: 150px;
+        padding: 1.5rem;
+    }
+}
+
+/* Animation for Dynamic Island */
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.main-nav:hover {
+    animation: float 3s ease-in-out infinite;
+}
